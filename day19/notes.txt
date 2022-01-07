@@ -1,0 +1,9 @@
+Boy what a horrendous puzzle.
+
+My solution is really slow.
+It could be a lot faster, I reckon,
+if my indexing was smarter.
+For example, create an index using the edges as the keys, 
+so that you can search for matching edges (and their associated points) directly
+using the index rather than having to go through every
+single point in the other region and check its edges/neighbours set.

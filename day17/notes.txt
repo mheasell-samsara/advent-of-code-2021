@@ -1,0 +1,19 @@
+Part 1 of this one can be solved easily without any code.
+
+The only axis that matters is the Y axis.
+
+To reach max. height we want to launch as fast as possible in Y.
+
+Any upward velocity will eventually cause the projectile
+to reach y=0 with vy = -initial_vy - 1.
+On the next step the projectile will move down again into the box.
+
+To maximize initial_vy we want to hit the bottom of the box.
+
+In the input, the bottom of the box is y=-85.
+Therefore our initial_vy should by +84.
+
+Since rate of y increase is decreasing by 1 every tick,
+we can find max. y via triangle number formula (n*(n+1))/2
+
+(84*85)/2 = 3570
