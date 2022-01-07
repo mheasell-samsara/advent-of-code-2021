@@ -1,0 +1,7 @@
+Holy shit my code for this one sucks.
+Highly complex, full of bugs, and slow.
+The A* could be much faster with a min-heap of course
+but there is probably something key I missed
+that would cut down the search space a lot.
+I spent way too long on this one and got punished hard
+for my unwillingness to write unit tests.

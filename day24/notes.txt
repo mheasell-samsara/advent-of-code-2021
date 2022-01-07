@@ -1,0 +1,48 @@
+push(15, 15)   8       1
+push(15, 10)   9       7
+push(12, 2)    9       1
+push(13, 16)   5       1
+pop(-12, 12)   9       5
+push(10, 11)   7       1
+pop(-9, 5)     9       3
+push(14, 16)   4       1
+push(13, 6)    9       9
+pop(-14, 15)   1       1
+pop(-11, 3)    9       6
+pop(-2, 12)    9       1
+pop(-16, 10)   3       1
+pop(-14, 13)   9       2
+
+Solved by hand with the aid of my script
+to execute the instructions and inspect the registers
+during execution.
+You can do it basically by inspecting "z"
+after the processing of each digit
+(pause just before the "inp" instruction
+for the next digit).
+
+The instructions process each digit in turn,
+accumulating a result in z.
+
+Each round, input digit is loaded to w.
+y is used as temporary storage for arithmetic.
+x is used to hold a conditional flag which is used
+to cancel certain behaviour.
+
+Each digit is either a "push" or a "pop".
+
+"push" digits are combined by something like
+(z*26) + value + offset2.
+
+"pop" digits are compared against (z%26) + offset1.
+z is then always divided by 26, and if the comparison succeeded
+this suppresses the "push" behaviour of multiplying by 26
+and adding the digit and offset2.
+
+If all the "pop"s succeed, there will have been an equal
+number of pushes and pops, and therefore z will be reduced
+to zero.
+
+Therfore, digits form push/pop "pairs" that have to be a fixed
+offset apart. The digits can be anything as long as each pair
+maintains the same offset from each other.
